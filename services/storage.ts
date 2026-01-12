@@ -1,4 +1,10 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/services/storage.ts
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import { User, Event, AttendanceRecord, Role, AuditLog, PermissionRequest, Notification, Reward, PointLog, BrandingConfig, FeatureConfig, Agenda, Organization } from '../types';
 import { generateId, signData, verifyData } from './utils';
 import { DB } from './db';

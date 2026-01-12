@@ -1,4 +1,10 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/pages/Login.tsx
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../App';

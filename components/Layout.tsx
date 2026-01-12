@@ -1,4 +1,10 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/components/Layout.tsx
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';

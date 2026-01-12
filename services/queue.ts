@@ -1,4 +1,10 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/services/queue.ts
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import { AttendanceRecord } from '../types';
 import { StorageService } from './storage';
 

@@ -1,3 +1,10 @@
+
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/services/export.ts
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import * as XLSX from 'xlsx';

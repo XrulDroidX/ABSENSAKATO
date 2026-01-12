@@ -5,20 +5,19 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // FIXED: Base URL harus sesuai nama repository GitHub agar aset (JS/CSS) terbaca
+  // FIXED: Base URL sesuai repository GitHub
   base: '/ABSENSAKATO/', 
   build: {
     target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: false,
+    sourcemap: true, // Enable sourcemap for better debugging in prod
     cssCodeSplit: true,
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: false, // KEEP CONSOLE LOGS for debugging on GitHub Pages
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
         passes: 2
       },
     },

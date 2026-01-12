@@ -1,4 +1,10 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/pages/Dashboard.tsx
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import React, { useMemo, useState, useEffect } from 'react';
 import { StorageService } from '../services/storage';
 import { User, Role, Agenda } from '../types';

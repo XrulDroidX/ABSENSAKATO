@@ -1,3 +1,10 @@
+
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/pages/Attendance.tsx
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import React, { useState, useEffect, useRef } from 'react';
 import { StorageService } from '../services/storage';
 import { Event, AttendanceMode } from '../types';

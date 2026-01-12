@@ -1,4 +1,9 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/services/automation.ts
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
 
 import { StorageService } from './storage';
 import { AttendanceRecord, Role } from '../types';

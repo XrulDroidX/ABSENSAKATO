@@ -1,19 +1,27 @@
 
 import { createClient } from '@supabase/supabase-js';
 
-// Use fallback to prevent module-level crash if ENV is missing during build/dev
-const supabaseUrl = (import.meta as any).env.VITE_SUPABASE_URL || "https://placeholder.supabase.co";
-const supabaseKey = (import.meta as any).env.VITE_SUPABASE_ANON_KEY || "placeholder-key";
+// DEBUG: Log Env availability (Masked for security)
+const envUrl = (import.meta as any).env.VITE_SUPABASE_URL || (window as any).__ENV__?.VITE_SUPABASE_URL;
+const envKey = (import.meta as any).env.VITE_SUPABASE_ANON_KEY || (window as any).__ENV__?.VITE_SUPABASE_ANON_KEY;
 
-// Log warning instead of throwing hard error to allow React to render ErrorBoundary
-if (supabaseUrl === "https://placeholder.supabase.co" || supabaseKey === "placeholder-key") {
-  console.error("CRITICAL: Missing Supabase Environment Variables. Check .env or GitHub Secrets.");
+console.log('[Supabase Init] Checking Environment Variables:');
+console.log('- URL Exists:', !!envUrl, envUrl ? `(Starts with: ${envUrl.substring(0, 8)}...)` : 'MISSING');
+console.log('- KEY Exists:', !!envKey, envKey ? '(Present)' : 'MISSING');
+
+// Fallback values to prevent white-screen crash during module load
+const supabaseUrl = envUrl || "https://placeholder.supabase.co";
+const supabaseKey = envKey || "placeholder-key";
+
+if (supabaseUrl === "https://placeholder.supabase.co") {
+  console.error("CRITICAL ERROR: VITE_SUPABASE_URL is missing. Check .env or GitHub Secrets injection.");
 }
 
 export const supabase = createClient(supabaseUrl, supabaseKey, {
   auth: {
-    persistSession: true, // Allow Supabase to handle JWT refresh automatically
+    persistSession: true,
     autoRefreshToken: true,
+    detectSessionInUrl: true
   },
   db: {
     schema: 'public'

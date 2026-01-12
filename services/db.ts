@@ -1,4 +1,10 @@
 
+// ⚠️ LEGACY FILE - DO NOT USE
+// File ini TIDAK LAGI dipakai
+// Semua logic aktif ada di /src/services/db.ts
+// Dibiarkan hanya untuk backward reference
+// Tanggal: 2024-05-21
+
 import { User, Event, AttendanceRecord, AuditLog, Notification, PermissionRequest, Reward, PointLog, Agenda } from '../types';
 
 const DB_NAME = 'sakato_db';
