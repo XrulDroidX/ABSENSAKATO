@@ -1,0 +1,9 @@
+{
+  "name": "ABSENSAKATO",
+  "description": "A professional, anti-cheat digital attendance system featuring GPS tracking, dynamic QR codes, biometric simulation, and comprehensive analytics.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

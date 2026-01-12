@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SAKATO Attendance System</title>
+    <meta name="description" content="Sistem Absensi Digital Profesional SAKATO">
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://esm.sh">
+    <link rel="dns-prefetch" href="https://esm.sh">
+    
+    <!-- PWA Setup -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#0F172A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Tailwind via CDN (Optimized loading) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'] },
+            colors: {
+              primary: '#0F172A',
+              secondary: '#2563EB',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Critical CSS for Splash -->
+    <style>
+      body { margin: 0; padding: 0; background-color: #f8fafc; }
+      #native-splash {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-color: #0F172A;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.4s ease-out;
+        will-change: opacity;
+      }
+      .loader-ring {
+        display: inline-block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+        contain: strict;
+      }
+      .loader-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        margin: 6px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        animation: loader-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+      }
+      .loader-ring div:nth-child(1) { animation-delay: -0.45s; }
+      .loader-ring div:nth-child(2) { animation-delay: -0.3s; }
+      .loader-ring div:nth-child(3) { animation-delay: -0.15s; }
+      @keyframes loader-ring {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .brand-text {
+        color: white;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 2px;
+        opacity: 0.9;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.25.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "jspdf": "https://esm.sh/jspdf@^4.0.0",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@^5.0.7",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.90.1",
+    "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@^5.90.16"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+    
+    <div id="native-splash">
+      <div class="loader-ring"><div></div><div></div><div></div><div></div></div>
+      <div class="brand-text">SAKATO</div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    
+    <!-- Defer heavy libs. FaceAPI is now loaded dynamically via services/face.ts -->
+    <!-- QR Code Scanner (Deferred) -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript" defer></script>
+    <!-- QR Code Generator (Deferred) -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js" defer></script>
+  </body>
+</html>
